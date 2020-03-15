@@ -2,11 +2,17 @@ import datetime
 import subprocess
 from utils.eta_tool import ETATool
 
-
 up_speed = 1.2433  # in megabits, can replace with your github upload speed to get more accurate eta results
 
 
 class opReleaser:
+  profiles = {'ShaneSmiskol':  # add as many profiles as you want
+                {'op_base_dir': 'C:/Git/op-smiskol/openpilot',
+                 'release_branch': 'stock_additions',
+                 'target_branch': 'stock_additions-release',
+                 'commit_message': 'Stock Additions 0.2 (0.7.1) {} Release'},
+              }
+
   def __init__(self):
     """
       self.op_base_dir: Replace with the path leading to your local openpilot repository
@@ -17,10 +23,12 @@ class opReleaser:
       When you run this file, it will checkout your release branch immediately, make sure it's up to date with your remote by pulling before running
     """
 
-    self.op_base_dir = 'C:/Git/op-smiskol/openpilot'
-    self.release_branch = 'stock_additions'
-    self.target_branch = 'stock_additions-release'
-    self.commit_message = 'Stock Additions 0.2 (0.7.1) {} Release'.format(self.get_cur_date())
+    profile = 'ShaneSmiskol'  # change to your desired current profile
+
+    self.op_base_dir = self.profiles[profile]['op_base_dir']
+    self.release_branch = self.profiles[profile]['release_branch']
+    self.target_branch = self.profiles[profile]['target_branch']
+    self.commit_message = self.profiles[profile]['commit_message'].format(self.get_cur_date())
 
     self.eta_tool = ETATool(self.op_base_dir, up_speed)
 
