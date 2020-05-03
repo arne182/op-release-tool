@@ -7,10 +7,10 @@ up_speed = 1.2433  # in megabits, can replace with your github upload speed to g
 
 class opReleaser:
   profiles = {'ShaneSmiskol':  # add as many profiles as you want
-                {'op_base_dir': 'C:/Git/op-smiskol/openpilot',
+                {'op_base_dir': 'C:/Git/openpilot-repos/op-smiskol/openpilot',
                  'release_branch': 'stock_additions',
                  'target_branch': 'stock_additions-release',
-                 'commit_message': 'Stock Additions 0.2 (0.7.1) {} Release'},
+                 'commit_message': 'Stock Additions 0.2.5 (0.7.4) {} Release'},
               }
 
   def __init__(self):
