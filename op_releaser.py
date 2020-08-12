@@ -10,7 +10,7 @@ class opReleaser:
                 {'op_base_dir': 'C:/Git/openpilot-repos/op-smiskol/openpilot',
                  'release_branch': 'stock_additions',
                  'target_branch': 'stock_additions-release',
-                 'commit_message': 'Stock Additions 0.2.5 (0.7.4) {} Release'},
+                 'commit_message': 'Stock Additions (0.7.4) {} Release'},
               }
 
   def __init__(self):
